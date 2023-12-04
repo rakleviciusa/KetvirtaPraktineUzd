@@ -18,5 +18,8 @@
     <ClCompile Include="KetvirtaPraktineUzd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="KetvirtaPraktine2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
