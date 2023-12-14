@@ -8,20 +8,28 @@ using namespace std;
 int main()
 {
     
-    ifstream file;
+    ifstream inputFile;
+    ofstream outputFile;
 
-    file.open("salary.txt");
+    inputFile.open("salary.txt");
+    outputFile.open("newSalary.txt");
 
-    int lineCount = 0;
-    string line;
+    string lastName;
+    string firstName;
+    double salary;
+    double salaryIncrease;
 
-    while (getline(file, line)) {
-        lineCount++;
+    while (inputFile >> lastName >> firstName >> salary >> salaryIncrease) {
+        double updatedSalary = salary * (salaryIncrease / 100 + 1);
+
+        outputFile << fixed << setprecision(2) << firstName << " " << lastName << " " << updatedSalary << endl;
     }
 
-    file.close();
 
-    cout << lineCount << endl;
-    
+    inputFile.close();
+    outputFile.close();
+
+    cout << "Atlyginimai atnaujinti ir issaugoti newSalary.txt faile " << endl;
+
     return 0;
 }
